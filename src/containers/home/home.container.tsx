@@ -1,5 +1,4 @@
 import { Button, Grid, Typography } from "@mui/material";
-import { FC } from "react";
 import { Product } from "@app/models/product/product.model";
 import { getTranslations } from "next-intl/server";
 import ProductCard from "@app/components/product-card/product-card.server";
@@ -9,7 +8,7 @@ type ProductListContainerProps = {
 	products: Product[];
 }
 
-const HomeContainer: FC<ProductListContainerProps> = async ({ products }) => {
+export default async function HomeContainer({ products }: ProductListContainerProps) {
 	const t = await getTranslations();
 
 	return (
@@ -28,7 +27,7 @@ const HomeContainer: FC<ProductListContainerProps> = async ({ products }) => {
 					sx={{
 						pl: 1
 					}}>
-						{t('home.showAll')}
+					{t('home.showAll')}
 				</Button>
 			</Grid>
 			{products.map(item => (
@@ -36,6 +35,4 @@ const HomeContainer: FC<ProductListContainerProps> = async ({ products }) => {
 			))}
 		</Grid>
 	);
-};
-
-export default HomeContainer;
+}

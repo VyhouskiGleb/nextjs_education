@@ -470,6 +470,7 @@ class ProductService {
 		});
 	}
 
+	// для реализации фильтрации
 	public getAllProductsByKey<T extends keyof Product>(key: T, value: Product[T]): Promise<Product[]> {
 		return new Promise((resolve) => {
 			setTimeout(() => {

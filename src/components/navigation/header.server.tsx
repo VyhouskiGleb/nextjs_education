@@ -7,7 +7,7 @@ type NavigationProps = {
     routes: Record<string, string>
 }
 
-// todo ->  надо сделать клиентскую компоненту для view
+// todo ->  надо сделать клиентскую компоненту для мобильного отображения
 export default async function Header({ routes }: NavigationProps) {
     return (
         <Toolbar>
