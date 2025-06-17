@@ -1,10 +1,10 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 export type LayoutProps<Params> = PropsWithChildren & {
-	params: Promise<Params>;
+  params: Promise<Params>;
 };
 
 export type PageProps<Params = void, SearchParams = void> = Partial<{
-	params: Promise<Params>
-	searchParams: Promise<SearchParams>
-}>
+  params: Promise<Params>;
+  searchParams: Promise<SearchParams>;
+}>;
