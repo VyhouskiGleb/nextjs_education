@@ -1,1 +1,0 @@
-# NextJS course project

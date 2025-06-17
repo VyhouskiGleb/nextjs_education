@@ -1,0 +1,36 @@
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 992px;
+$breakpoint-desktop: 1200px;
+
+@mixin mobile {
+  @media screen and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$breakpoint-mobile + 1}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+// Миксин для устройств меньше планшета (до 768px)
+@mixin mobile-tablet {
+  @media screen and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$breakpoint-laptop + 1}) and (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: #{$breakpoint-desktop + 1}) {
+    @content;
+  }
+}
+
