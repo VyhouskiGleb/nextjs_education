@@ -1,5 +1,5 @@
 import { productService } from '@app/service/product/product.service';
-import { decodeUrlParam } from '@app/utils/url.utils';
+import { decodeUrlParam, encodeUrlParam } from '@app/utils/url.utils';
 import { notFound } from 'next/navigation';
 import { PageProps } from '@app/models/router.model';
 import { Product } from '@app/models/product/product.model';
@@ -14,7 +14,7 @@ export async function generateStaticParams(): Promise<Params[]> {
 
   return products.map(
     (product: Product): Params => ({
-      slug: product.name,
+      slug: encodeUrlParam(product.name),
     }),
   );
 }
